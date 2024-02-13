@@ -9,7 +9,8 @@ namespace Assignment.Core.Mapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<RegisterUserDTO,ApplicationUser>().ReverseMap();
+            CreateMap<RegisterUserDTO,ApplicationUser>();
+            CreateMap<ApplicationUser,UserResponseDTO>();
         }
     }
 }

@@ -22,20 +22,21 @@ namespace Assignment.Core.Security
                  {
                      options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                      options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                    
+
                  });
-                
-               
+
+
                 IConfigurationSection config = configuration.GetSection("Authentication:Google");
                 if (config != null)
                 {
                     bool.TryParse(config["IsOAuthEnabled"], out isAuthEnabled);
                     if (isAuthEnabled)
                     {
-                        
+
                         AddGoogleAuthentication(authenticationBuilder, config);
                     }
                 }
+
                 config = configuration.GetSection("Authentication:Jwt");
                 if (config != null)
                 {

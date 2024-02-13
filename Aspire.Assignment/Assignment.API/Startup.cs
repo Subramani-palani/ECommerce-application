@@ -9,6 +9,7 @@ using Assignment.Infrastructure;
 using Assignment.Core;
 using Microsoft.AspNetCore.Mvc;
 using Assignment.Core.Security;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Assignment
 {
@@ -40,6 +41,7 @@ namespace Assignment
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Aspire Marketplace App API", Description = "Aspire Marketplace App  is a  solution, built to demonstrate implementing market place to sell/download the app which present in the market place ", Version = "v1" });
             });
+
              
             services.AddCors(policy =>{
                 policy.AddDefaultPolicy(builder =>{

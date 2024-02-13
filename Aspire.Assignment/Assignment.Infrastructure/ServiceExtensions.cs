@@ -10,6 +10,7 @@ using Assignment.Contracts.Data.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Assignment.Contracts.Data.Repositories;
 using Assignment.Core.Data.Repositories;
+using Assignment.Infrastructure.Data.Repositories;
 
 namespace Assignment.Infrastructure
 {
@@ -52,6 +53,7 @@ namespace Assignment.Infrastructure
             .AddRoleStore<RoleStore<ApplicationRole,DatabaseContext,Guid>>();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IJwtService,JwtService>();
             
             return services.AddDatabaseContext(configuration).AddUnitOfWork();
         }
