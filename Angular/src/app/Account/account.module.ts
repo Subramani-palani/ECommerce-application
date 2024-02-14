@@ -4,13 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { RouterOutlet } from '@angular/router';
 import { AccountComponent } from './account.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
 @NgModule({
   declarations: [
     SignUpComponent,
-    AccountComponent
+    AccountComponent,
+    ContactComponent
     
   ],
   imports: [
