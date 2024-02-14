@@ -21,7 +21,7 @@
                 </div>                
             </div>
             <div class="md:flex md:flex-col">
-                <form [formGroup]="sigupForm" class="md:flex md:flex-col space-y-2">
+                <form [formGroup]="sigupForm" class="md:flex md:flex-col space-y-2" (ngSubmit)="onSubmit()">
                     <div class="space-y-4">
                         <div class="md:flex md:flex-col gap-2 md:items-start">
                             <input type="text" id="username" formControlName="username" placeholder="Username" class="h-10 w-full  border border-x-0 border-t-0  border-gray-400  p-2 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out hover:border-gray-400 ">
@@ -44,7 +44,7 @@
                     </div>
                     
                     <div>
-                        <button class="bg-red-500 text-white md:px-24 md:py-2 h-12 w-full rounded-md mt-4  backdrop-filter">Create Account</button>
+                        <button class="bg-red-500 text-white md:px-24 md:py-2 h-12 w-full rounded-md mt-4  backdrop-filter" type="submit">Create Account</button>
                     </div>
                     <div>
                         <button class="bg-white text-white md:px-24 md:py-2 h-12 w-full rounded-md mt-4 border border-solid border-gray-500 flex flex-row items-center justify-center gap-x-2">
