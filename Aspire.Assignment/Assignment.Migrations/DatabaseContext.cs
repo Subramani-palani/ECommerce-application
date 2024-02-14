@@ -26,5 +26,7 @@ namespace Assignment.Migrations
 
             return base.SaveChangesAsync(cancellationToken);
         }
+
+        public DbSet<Address> Addresses { get; set; }
     }
 }
