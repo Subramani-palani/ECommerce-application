@@ -8,6 +8,7 @@ import { AppServiceService } from 'src/app/services/app-service.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+
 sigupForm!: FormGroup<any>;
 
 /**
@@ -25,6 +26,9 @@ constructor(private fb:FormBuilder) {
       password:['',[Validators.required]]
       
     });
+  }
+  onSubmit() {
+    throw new Error('Method not implemented.');
   }
 
 
