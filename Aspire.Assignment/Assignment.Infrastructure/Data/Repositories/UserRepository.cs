@@ -58,7 +58,7 @@ namespace Assignment.Core.Data.Repositories
             return newUser.Id;
         }
 
-        public async Task<AuthenticationResponse> AuthenticateUser(string email, string password)
+        public async Task<AuthenticationResponse?> AuthenticateUser(string email, string password)
         {
             var result = await _signInManager.PasswordSignInAsync(email,password,isPersistent:false,lockoutOnFailure:false);
             if(!result.Succeeded){
