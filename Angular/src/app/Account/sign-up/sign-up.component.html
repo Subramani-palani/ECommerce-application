@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="flex flex-col gap-2 items-start">
-                            <input type="text" id="email" formControlName="email" placeholder="Email" class="h-10 w-full  border border-x-0 border-t-0  border-gray-400  p-2 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out hover:border-gray-400 ">
+                            <input type="text" id="email" formControlName="email" placeholder="Email" class="h-10 w-full border border-x-0 border-t-0  border-gray-400  p-2 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out hover:border-gray-400 ">
                             <div *ngIf="sigupForm.get('email')?.hasError('required') && sigupForm.get('email')?.touched" class="text-red-500">
                                 Email is required.
                             </div>
