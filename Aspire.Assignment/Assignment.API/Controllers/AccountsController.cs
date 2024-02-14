@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Assignment.API.Controllers
 {
     [ApiController]
-    [Route("[Controller]/[action]")]
+    [Route("api/[controller]/[action]")]
     public class AccountsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -18,8 +18,8 @@ namespace Assignment.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("")]
-        public async Task<IActionResult> RegisterUser(RegisterUserDTO registerUserDTO){
+        [HttpPost]
+        public async Task<IActionResult> RegisterAsync(RegisterUserDTO registerUserDTO){
             var command = new CreateUserCommand(registerUserDTO);
             Guid newId = await _mediator.Send(command);
 
@@ -31,18 +31,30 @@ namespace Assignment.API.Controllers
         }
 
 
-        [HttpPost("")]
-        public async Task<IActionResult> AuthenticateUser(LoginUserDTO loginUserDTO){
-            var command = new SignInUserQuery(loginUserDTO);
-            Guid userId = await _mediator.Send(command);
+        [HttpPost]
+        public async Task<IActionResult> LoginAsync(LoginUserDTO loginUserDTO){
+            var signInUserQuery = new SignInUserQuery(loginUserDTO);
+            AuthenticationResponse authenticationResponse = await _mediator.Send(signInUserQuery);
 
-            if(userId == Guid.Empty){
-                return BadRequest("Invalid username or password");
+            //Todo: Set the jwt token in an HTTP-only cookie
+
+            if(authenticationResponse == null){
+                return NotFound("Invalid username or password");
             }
-            return Ok(new {
-                UserId = userId,
-                Message = "Login Successfull"
-            });
+            return Ok(
+                authenticationResponse
+            );
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> LogoutAsync(){
+            var signOutUserQuery = new SignOutUserQuery();
+            await _mediator.Send(signOutUserQuery);
+
+            //Todo: delete the jwt token inside the cookie
+
+            return Ok(new {message="User Logged out successfully"});
+            
         }
 
 

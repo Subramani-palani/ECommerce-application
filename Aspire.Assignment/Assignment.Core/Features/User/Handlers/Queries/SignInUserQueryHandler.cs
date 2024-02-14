@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Assignment.Core.Features.User.Handlers.Queries
 {
-    public class SignInUserQueryHandler : IRequestHandler<SignInUserQuery, Guid>
+    public class SignInUserQueryHandler : IRequestHandler<SignInUserQuery, AuthenticationResponse>
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
@@ -20,7 +20,7 @@ namespace Assignment.Core.Features.User.Handlers.Queries
             _userRepository = userRepository;
             _validator = validator;
         }
-        public async Task<Guid> Handle(SignInUserQuery request, CancellationToken cancellationToken)
+        public async Task<AuthenticationResponse> Handle(SignInUserQuery request, CancellationToken cancellationToken)
         {
             //validation
             var validationResult = await _validator.ValidateAsync(request.LoginUserDTO);
@@ -31,7 +31,7 @@ namespace Assignment.Core.Features.User.Handlers.Queries
                 throw new ValidatorException(validationResult);
             }
 
-            return await _userRepository.AuthenticateUser(request.LoginUserDTO.Email,request.LoginUserDTO.Password);
+            return await Task.FromResult(await _userRepository.AuthenticateUser(request.LoginUserDTO.Email,request.LoginUserDTO.Password));
 
         }
     }

@@ -3,4 +3,4 @@ using MediatR;
 
 namespace Assignment.Core.Features.User.Requests;
 
-public record SignInUserQuery(LoginUserDTO LoginUserDTO) : IRequest<AuthenticationResponse>;
+public record GetAllUsersQuery() : IRequest<IEnumerable<UserResponseDTO>>;

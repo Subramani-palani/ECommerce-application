@@ -1,8 +1,9 @@
-﻿using Assignment.Contracts.Data.Entities;
-using Assignment.Contracts.Data.Entities.Identity;
+﻿using Assignment.Contracts.Data.Entities.Identity;
 using Assignment.Contracts.Data.Repositories;
+using Assignment.Contracts.DTO;
 using Assignment.Migrations;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Assignment.Core.Data.Repositories
@@ -12,14 +13,18 @@ namespace Assignment.Core.Data.Repositories
         private readonly  DatabaseContext _databaseContext;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        public UserRepository(DatabaseContext databaseContext, UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager)
+        private readonly IJwtService _jwtService;
+
+        public UserRepository(DatabaseContext databaseContext, UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager,
+                                IJwtService jwtService)
         {
             _databaseContext = databaseContext;
             _userManager = userManager;
             _signInManager = signInManager;
+            _jwtService = jwtService;
         }
 
-        public async Task<Guid> AddUserAsync(ApplicationUser applicationUser, string password)
+        public async Task<Guid> RegisterUserAsync(ApplicationUser applicationUser, string password)
         {
             IdentityResult result =  await _userManager.CreateAsync(applicationUser,password);
 
@@ -37,28 +42,39 @@ namespace Assignment.Core.Data.Repositories
             return newUser.Id;
         }
 
-        public async Task<Guid> AuthenticateUser(string email, string password)
+        public async Task<AuthenticationResponse> AuthenticateUser(string email, string password)
         {
             var result = await _signInManager.PasswordSignInAsync(email,password,isPersistent:false,lockoutOnFailure:false);
             if(!result.Succeeded){
                 //Handle this InValid case
-                return Guid.Empty;
+                return null;
             }
 
-            ApplicationUser newUser = await _userManager.FindByEmailAsync(email);
-            return newUser.Id;
+            //Create a JWT Token
 
+            ApplicationUser existingUser = await _userManager.FindByEmailAsync(email);
+
+            AuthenticationResponse authenticationResponse = _jwtService.CreateJwtToken(existingUser);
+
+            return authenticationResponse;
         }
 
 
         public async Task<bool> IsEmailAlreadyExistsAsync(string email)
         {
             ApplicationUser existingUser = await _userManager.FindByEmailAsync(email);
-            if(existingUser == null){
-                Console.WriteLine("***************** User Didnt Exist ****************");
-            }
             return existingUser == null;
         }
 
+        public async Task LogoutAsync()
+        {
+           await _signInManager.SignOutAsync();
+        }
+
+        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            return users;
+        }
     }
 }

@@ -14,10 +14,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	
-	  <ProjectReference Include="..\Assignment.Infrastructure\Assignment.Infrastructure.csproj" />
-	
 	  <ProjectReference Include="..\Assignment.Core\Assignment.Core.csproj" />
+	  <ProjectReference Include="..\Assignment.Infrastructure\Assignment.Infrastructure.csproj" />
 	</ItemGroup>
 
 
