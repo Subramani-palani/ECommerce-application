@@ -35,7 +35,7 @@ namespace Assignment.Core.Features.User.Handlers.Commands
             var user = _mapper.Map<ApplicationUser>(request.RegisterUserDto);
             user.UserName = user.Email;
 
-            Guid newId = await _userRepository.RegisterUserAsync(user,request.RegisterUserDto.Password);
+            Guid newId = await _userRepository.RegisterUserAsync(user,request.RegisterUserDto.Password ??"");
             
             if(newId == Guid.Empty){
                 throw new Exception("User Account Creation Failed");

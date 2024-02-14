@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using Assignment.Contracts.DTO;
 using Assignment.Core.Features.User.Requests;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
+    [AllowAnonymous]
     public class AccountsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -56,7 +58,6 @@ namespace Assignment.API.Controllers
             return Ok(new {message="User Logged out successfully"});
             
         }
-
 
     }
 }

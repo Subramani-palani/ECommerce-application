@@ -1,4 +1,5 @@
 ﻿using Assignment.Contracts.Data.Entities.Identity;
+using Assignment.Contracts.Data.Enums;
 using Assignment.Contracts.Data.Repositories;
 using Assignment.Contracts.DTO;
 using Assignment.Migrations;
@@ -13,15 +14,17 @@ namespace Assignment.Core.Data.Repositories
         private readonly  DatabaseContext _databaseContext;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IJwtService _jwtService;
 
         public UserRepository(DatabaseContext databaseContext, UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager,
-                                IJwtService jwtService)
+                                IJwtService jwtService, RoleManager<ApplicationRole> roleManager)
         {
             _databaseContext = databaseContext;
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtService = jwtService;
+            _roleManager = roleManager;
         }
 
         public async Task<Guid> RegisterUserAsync(ApplicationUser applicationUser, string password)
@@ -36,13 +39,26 @@ namespace Assignment.Core.Data.Repositories
 
                 return Guid.Empty;
             }
+
+
+            // Adding Buyer Role to to the AspNetRoles table for first time
+
+            if(await _roleManager.FindByNameAsync(UserRoleOptions.Buyer.ToString()) is null){
+                ApplicationRole applicationRole = new ApplicationRole(){
+                    Name = UserRoleOptions.Buyer.ToString()
+                };
+                await _roleManager.CreateAsync(applicationRole);
+            }
+
+            // Adding current user into the Buyer Role ie into AspNetUserRoles 
+            await _userManager.AddToRoleAsync(applicationUser,UserRoleOptions.Buyer.ToString());
             
             //step3: 
             ApplicationUser newUser = await _userManager.FindByEmailAsync(applicationUser.Email);
             return newUser.Id;
         }
 
-        public async Task<AuthenticationResponse> AuthenticateUser(string email, string password)
+        public async Task<AuthenticationResponse?> AuthenticateUser(string email, string password)
         {
             var result = await _signInManager.PasswordSignInAsync(email,password,isPersistent:false,lockoutOnFailure:false);
             if(!result.Succeeded){

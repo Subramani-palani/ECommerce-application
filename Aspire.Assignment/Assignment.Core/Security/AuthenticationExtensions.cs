@@ -57,8 +57,8 @@ namespace Assignment.Core.Security
             }
             catch (Exception ex)
             {
-
-
+                //Handle the Exception here
+                Console.WriteLine(ex.Message);
             }
 
         }

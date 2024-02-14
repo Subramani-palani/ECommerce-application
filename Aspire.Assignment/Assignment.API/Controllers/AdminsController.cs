@@ -10,7 +10,7 @@ namespace Assignment.API.Controllers
 {
     [Route("api/[Controller]/[action]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class AdminsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -26,6 +26,8 @@ namespace Assignment.API.Controllers
             GetAllUsersQuery getAllUsersQuery = new ();
             return await _mediator.Send(getAllUsersQuery);
         }
+
+        
 
         
     }
