@@ -15,6 +15,16 @@ namespace Assignment.Migrations
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Cart>().HasMany(product => product.CartProducts)
+            .WithOne(cart => cart.Cart)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<Product>().HasMany(cart => cart.CartProducts)
+            .WithOne(product => product.Product)
+            .OnDelete(DeleteBehavior.Cascade);
+
+
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -28,5 +38,8 @@ namespace Assignment.Migrations
         }
 
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
