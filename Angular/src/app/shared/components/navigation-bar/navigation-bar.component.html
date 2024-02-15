@@ -25,10 +25,10 @@
       </div>
       <div class="hidden md:flex space-x-4">
             <!-- Desktop navigation links -->
-            <a href="#" class="block text-black py-2">Home</a>
-            <a routerLink="Account/contact" class="block text-black py-2">Contact</a>
-            <a href="#" class="block text-black py-2">About</a>
-            <a routerLink="/Account/signup" routerLinkActive="router-link-active"  class="block text-black py-2">SignUp</a>
+            <a href="#" class="block text-black py-2 transition duration-300 ease-in-out hover:underline">Home</a>
+            <a routerLink="Account/contact" routerLinkActive="ActiveLink" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline ">Contact</a>
+            <a href="#" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">About</a>
+            <a routerLink="/Account/signup" routerLinkActive="ActiveLink"  class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">SignUp</a>
       </div>
       <div class="hidden md:flex ">
             
@@ -51,10 +51,10 @@
     <!-- MobileNavigationBar -->
     <div *ngIf="isMobileMenuOpen" class="md:hidden flex flex-col items-center">
         <!-- Mobile navigation links -->
-        <a href="#" class="block text-black py-2">Home</a>
-        <a href="#" class="block text-black py-2">Contact</a>
-        <a href="#" class="block text-black py-2">About</a>
-        <a routerLink="/Account/signup" routerLinkActive="router-link-active"  class="block text-black py-2">SignUp</a>
+        <a href="#" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">Home</a>
+        <a routerLink="Account/contact" routerLinkActive="ActiveLink" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">Contact</a>
+        <a href="#" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">About</a>
+        <a routerLink="/Account/signup" routerLinkActive="ActiveLink"  class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">SignUp</a>
     </div>
     
   </nav>

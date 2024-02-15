@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountModule } from './Account/account.module';
 import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     ApplicationModule,
     SharedModule,
-    AccountModule
+    AccountModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
