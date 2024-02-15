@@ -21,6 +21,7 @@ import { AccountModule } from '../Account/account.module';
     FooterComponent
   ],
   imports: [
+   
     CommonModule,
     RouterModule,
     AccountModule

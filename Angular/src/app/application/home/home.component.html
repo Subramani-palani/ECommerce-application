@@ -1,4 +1,776 @@
-<div>Home page</div>
-    
-        
+<div class="flex flex-col md:flex-row sm:justify-evenly w-full  sm:items-center ">
+    <div
+        class="sm:w-1/5 pl-2 border border-solid border-x-0 border-b-1 border-t-0 sm:border-r-2 sm:border-b-0 border-gray-300 py-3 mt-0 overflow-x-scroll hide-scroll-bar  ">
+        <ul
+            class="flex flex-nowrap   w-full sm:w-2/5  sm:overflow-hidden sm:pl-0 space-x-5 sm:flex-col sm:space-y-4 sm:items-center text-gray-800  text-sm">
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105 text-black"><a href="">Phone</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Computers</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Smartwatch</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Camera</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Headphones</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Gaming</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Clothes</a></li>
+            <li class="hover:transition-transform hover:ease-in-out hover:scale-105"><a href="">Footwears</a></li>
+        </ul>
+    </div>
+    <div class="w-full px-1 pt-2 boreder rounded-md md:w-3/5 ">
+        <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
+        <div id="carouselDarkVariant" class="relative" data-te-carousel-init data-te-ride="carousel">
+            <!-- Carousel indicators -->
+            <div class="absolute inset-x-0 bottom-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+                data-te-carousel-indicators>
+                <button data-te-target="#carouselDarkVariant" data-te-slide-to="0" data-te-carousel-active
+                    class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button data-te-target="#carouselDarkVariant"
+                    class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                    data-te-slide-to="1" aria-label="Slide 1"></button>
+                <button data-te-target="#carouselDarkVariant"
+                    class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-black bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+                    data-te-slide-to="2" aria-label="Slide 1"></button>
+            </div>
 
+            <!-- Carousel items -->
+            <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                <!-- First item -->
+                <div class="relative float-left -mr-[100%] w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-fade data-te-carousel-item data-te-carousel-active>
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(19).webp" class="block w-full"
+                        alt="Motorbike Smoke" />
+                    <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-black md:block">
+                        <h5 class="text-xl">First slide label</h5>
+                        <p>
+                            Some representative placeholder content for the first slide.
+                        </p>
+                    </div>
+                </div>
+                <!-- Second item -->
+                <div class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-fade data-te-carousel-item>
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(35).webp" class="block w-full"
+                        alt="Mountaintop" />
+                    <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-black md:block">
+                        <h5 class="text-xl">Second slide label</h5>
+                        <p>
+                            Some representative placeholder content for the second slide.
+                        </p>
+                    </div>
+                </div>
+                <!-- Third item -->
+                <div class="relative float-left -mr-[100%] hidden w-full !transform-none opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none"
+                    data-te-carousel-fade data-te-carousel-item>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg"
+                        class="block w-full h-44 sm:6-" alt="Woman Reading a Book" />
+                    <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-black md:block">
+                        <h5 class="text-xl">Third slide label</h5>
+                        <p>
+                            Some representative placeholder content for the third slide.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel controls - prev item-->
+            <button
+                class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+                type="button" data-te-target="#carouselDarkVariant" data-te-slide="prev">
+                <span class="inline-block h-8 w-8 dark:grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </span>
+                <span
+                    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
+            </button>
+            <!-- Carousel controls - next item-->
+            <button
+                class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+                type="button" data-te-target="#carouselDarkVariant" data-te-slide="next">
+                <span class="inline-block h-8 w-8 dark:grayscale">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </span>
+                <span
+                    class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
+            </button>
+        </div>
+    </div>
+
+</div>
+<div class=" py-5">
+    <!-- flash sale section -->
+    <div class="py-2 pl-1 flex flex-row items-center">
+        <div class="w-4 h-7 bg-red-500 rounded-md">
+
+        </div>
+        <div class="text-red-500 font-semibold pl-2">
+            Today's
+        </div>
+    </div>
+    <div class="flex flex-row space-x-3">
+        <p class="pl-1 text-xl font-semibold text-black">Flash Sales</p>
+        <div class="flex flex-row space-x-2 items-center">
+            <div class="-space-y-3 px-1 text-center">
+                <p class="text-xs text-black font-semibold">Days</p>
+                <p class="text-black text-3xl font-bold">{{days}}</p>
+            </div>
+            <div class="h-3 w-0.5 border border-x-0 border-y-2 border-red-400">
+
+            </div>
+            <div class="-space-y-3 px-1 text-center">
+                <p class="text-xs text-black font-semibold">Hours</p>
+                <p class="text-black text-3xl font-bold">{{hours}}</p>
+            </div>
+            <div class="h-3 w-0.5 border border-x-0 border-y-2 border-red-400">
+
+            </div>
+            <div class="-space-y-3 px-1 text-center">
+                <p class="text-xs text-black font-semibold">Minutes</p>
+                <p class="text-black text-3xl font-bold">{{minutes}}</p>
+            </div>
+            <div class="h-3 w-0.5 border border-x-0 border-y-2 border-red-400">
+
+            </div>
+            <div class="-space-y-3 px-1 text-center">
+                <p class="text-xs text-black font-semibold">Seconds</p>
+                <p class="text-black text-3xl font-bold">{{seconds}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="w-full px-1 py-3">
+        <!-- flash sale carousel -->
+        <!-- component -->
+        <div class="flex flex-col bg-white m-auto p-auto">
+
+            <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+                <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-2 space-x-2 ">
+                    <div class="inline-block px-13">
+                        <div
+                            class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                                alt="Gaming mouse" class="px-2 h-4/5 ">
+                            <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                        </div>
+                        <div class="flex flex-col pt-3">
+                            <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                            <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                            </p>
+                        </div>
+                        <div class="flex flex-row items-center space-x-2">
+                            <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                                <path
+                                    d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                                    fill="#FFAD33" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                    <div class="inline-block px-13">
+                        <div
+                            class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                                alt="Gaming mouse" class="px-2 h-4/5 ">
+                            <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                        </div>
+                        <div class="flex flex-col pt-3">
+                            <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                            <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                            </p>
+                        </div>
+                        <div class="flex flex-row items-center space-x-2">
+                            <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                                <path
+                                    d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                                    fill="#FFAD33" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="inline-block px-13">
+                        <div
+                            class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                                alt="Gaming mouse" class="px-2 h-4/5 ">
+                            <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                        </div>
+                        <div class="flex flex-col pt-3">
+                            <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                            <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                            </p>
+                        </div>
+                        <div class="flex flex-row items-center space-x-2">
+                            <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                                <path
+                                    d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                                    fill="#FFAD33" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="inline-block px-13">
+                        <div
+                            class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                                alt="Gaming mouse" class="px-2 h-4/5 ">
+                            <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                        </div>
+                        <div class="flex flex-col pt-3">
+                            <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                            <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                            </p>
+                        </div>
+                        <div class="flex flex-row items-center space-x-2">
+                            <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                                <path
+                                    d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                                    fill="#FFAD33" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <button class="bg-red-500 hover:bg-red-200 text-white md:px-24 md:py-2 h-12 w-3/5  rounded-md ">
+                View All Products
+            </button>
+        </div>
+    </div>
+</div>
+<!-- browse by category -->
+<div class="py-5">
+    <div class="py-2 pl-1 flex flex-row items-center">
+        <div class="w-4 h-7 bg-red-500 rounded-md">
+
+        </div>
+        <div class="text-red-500 font-semibold pl-2">
+            Categories
+        </div>
+    </div>
+    <p class="text-black font-extrabold text-2xl pl-1 ">
+        Browse By Category
+    </p>
+    <div class="flex flex-col bg-white m-auto p-auto">
+        <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+            <div class="flex flex-nowrap lg:ml-40 md:ml-20 space-x-2">
+                <div class="inline-block px-3">
+                    <a routerLink="/product/phones" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Phones
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/computers" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Computers
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/smartwatch" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Smartwatch
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/camera" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Camera
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/headphones" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Headphones
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/gaming" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Gaming
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/clothes" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Clothes
+                        </p>
+                            
+                    </a>
+                </div>
+
+                <div class="inline-block px-3">
+                    <a routerLink="/product/footwears" class="flex flex-col items-center p-2 space-y-1 w-32 h-32 max-w-xs overflow-hidden rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                        <svg  class="w-20 text-gray-500" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1044_868)">
+                            <path d="M38.9375 6.125H17.0625C15.5523 6.125 14.3281 7.34922 14.3281 8.85938V47.1406C14.3281 48.6508 15.5523 49.875 17.0625 49.875H38.9375C40.4477 49.875 41.6719 48.6508 41.6719 47.1406V8.85938C41.6719 7.34922 40.4477 6.125 38.9375 6.125Z" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 7H31.1354" stroke="gray" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M28 44.0052V44.0305" stroke="gray" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="15.1667" y1="39.8334" x2="40.8333" y2="39.8334" stroke="gray" stroke-width="2"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1044_868">
+                            <rect width="56" height="56" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="text-md text-gray-800">
+                            Footwears
+                        </p>
+                            
+                    </a>
+                </div>
+                
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Best selling product -->
+<div  class="space-y-3 py-5">
+    <div class="py-2 pl-1 flex flex-row items-center">
+        <div class="w-4 h-7 bg-red-500 rounded-md">
+
+        </div>
+        <div class="text-red-500 font-semibold pl-2">
+            This month
+        </div>
+    </div>
+    <div class="flex flex-row items-center justify-between px-1">
+        <p class="text-black font-extrabold text-2xl pl-1 ">
+            Best Selling Products
+        </p>
+        <a routerLink="/product" class="bg-red-500 hover:bg-red-200 text-white flex items-center justify-center md:px-24 md:py-2 h-9 w-1/4  rounded-md ">
+            View All
+        </a>
+        
+    </div>
+    <div class="px-3 py-3 ">
+        <div class=" py-3 flex flex-row flex-wrap justify-evenly  ">
+            <div class="inline-block px-13 pb-6  ">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+    
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+    
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+    
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-5">
+    <div class="bg-black flex flex-col items-center">
+        <div class="pt-10 flex flex-col items-start space-y-4">
+            <p class="text-white  text-4xl font-normal">Enhance Your <br> Music Experience</p>
+            <div>
+                <div class="flex flex-row space-x-4 items-center">
+                    <div class=" h-12 w-12 -space-y-5 p-1 text-center bg-white rounded-full">
+                        <p class="text-black text-lg font-bold">{{days}}</p>
+                        <p class="text-xs text-black ">Days</p>
+
+                    </div>
+                    
+                    <div class="h-12 w-12 -space-y-5 p-1 text-center  bg-white rounded-full">
+                        <p class="text-black text-lg font-bold">{{hours}}</p>
+                        <p class="text-xs text-black ">Hours</p>
+
+                    </div>
+                    
+                    <div class="h-12 w-12 -space-y-5 p-1 text-center  bg-white rounded-full">
+                        <p class="text-black text-lg font-bold">{{minutes}}</p>
+                        <p class="text-xs text-black ">Minute</p>
+
+                    </div>
+                    
+                    <div class="h-12 w-13 -space-y-5 p-1 text-center  bg-white rounded-full">
+                        <p class="text-black text-lg font-bold">{{seconds}}</p>
+                        <p class="text-xs text-black ">Second</p>
+
+                    </div>
+                </div> 
+            </div>
+            <button class="mt-2 bg-green-500 hover:bg-red-400 hover:bg-red-200 text-white md:px-24 md:py-2 h-12 w-2/5  rounded-md ">
+                Buy Now
+            </button>
+        </div>
+        <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/JBL_BOOMBOX.png?alt=media&token=6dc14bfd-e56b-43d4-88b8-b58569ae9834" alt="" class="h-1/4">
+    </div>
+</div>
+<div class="py-5">
+    <div class="py-2 pl-1 flex flex-row items-center">
+        <div class="w-4 h-7 bg-red-500 rounded-md">
+
+        </div>
+        <div class="text-red-500 font-semibold pl-2">
+            Our Products
+        </div>
+    </div>
+    <div class="flex flex-row items-center justify-between px-1 pt-4">
+        <p class="text-black font-extrabold text-2xl pl-1 ">
+            Explore Our Products
+        </p>        
+    </div>
+
+    <div class="px-3 py-3 ">
+        <div class=" py-3 flex flex-row flex-wrap justify-evenly  ">
+            <div class="inline-block px-13 pb-6  ">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+    
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+    
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+    
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>
+
+            <div class="inline-block px-13 pb-6">
+                <div
+                    class="w-36 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-100 ">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/gaming-mouse.png?alt=media&token=6f9cd66a-4f56-4f91-a372-d839f600fd6e"
+                        alt="Gaming mouse" class="px-2 h-4/5 ">
+                    <button class="bg-gray-900 text-white py-1 w-full  ">Add to Cart </button>
+                </div>
+                <div class="flex flex-col pt-3">
+                    <p class="text-black font-semibold">Havit HV-G2 Gamepad</p>
+                    <p class="text-red-500">&#8377;666&nbsp;&nbsp;&nbsp;<s class="text-gray-400">&#8377;999</s>
+                    </p>
+                </div>
+                <div class="flex flex-row items-center space-x-2">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" *ngFor="let i of demo">
+                        <path
+                            d="M14.673 7.17173C15.7437 6.36184 15.1709 4.65517 13.8284 4.65517H11.3992C10.7853 4.65517 10.243 4.25521 10.0617 3.66868L9.33754 1.32637C8.9309 0.0110567 7.0691 0.0110564 6.66246 1.32637L5.93832 3.66868C5.75699 4.25521 5.21469 4.65517 4.60078 4.65517H2.12961C0.791419 4.65517 0.215919 6.35274 1.27822 7.16654L3.39469 8.78792C3.85885 9.1435 4.05314 9.75008 3.88196 10.3092L3.11296 12.8207C2.71416 14.1232 4.22167 15.1704 5.30301 14.342L7.14861 12.9281C7.65097 12.5432 8.34903 12.5432 8.85139 12.9281L10.6807 14.3295C11.7636 15.159 13.2725 14.1079 12.8696 12.8046L12.09 10.2827C11.9159 9.71975 12.113 9.10809 12.5829 8.75263L14.673 7.17173Z"
+                            fill="#FFAD33" />
+                    </svg>
+    
+                </div>
+            </div>  
+        </div>
+        <div class="flex justify-center">
+            <button class="bg-red-500 hover:bg-red-200 text-white md:px-24 md:py-2 h-12 w-3/5  rounded-md ">
+                View All Products
+            </button>
+        </div>
+    </div>
+
+</div>
+<div class="py-5">
+    <div class="py-2 pl-1 flex flex-row items-center">
+        <div class="w-4 h-7 bg-red-500 rounded-md">
+
+        </div>
+        <div class="text-red-500 font-semibold pl-2">
+            Featured
+        </div>
+    </div>
+    <div class="flex flex-row items-center justify-between px-1 pt-4">
+        <p class="text-black font-extrabold text-2xl pl-1 ">
+            New Arrival
+        </p>        
+    </div>
+    <div class="flex flex-col px-4 space-y-2 sm:space-y-0 sm:px-8 sm:grid sm:grid-cols-2 sm:gap-3">
+        <div class="bg-gray-400  w-full sm:h-3/5">
+            <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/NotebookStand.png?alt=media&token=0321208f-5d4b-40d8-93a4-b0c249c5bd22" alt="">
+        </div>
+        <div class="grid grid-rows-2 gap-3 sm:h-3/5">
+            <div class=" bg-gray-400 w-full ">
+                <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/NotebookStand.png?alt=media&token=0321208f-5d4b-40d8-93a4-b0c249c5bd22" alt="" class="h-full">
+            </div>
+             <div class="grid grid-cols-subgrid grid-cols-2 gap-3">
+                <div class=" bg-gray-400">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/NotebookStand.png?alt=media&token=0321208f-5d4b-40d8-93a4-b0c249c5bd22" alt="">
+                </div>
+                <div class=" bg-gray-400">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/shoppingapp-5e1ab.appspot.com/o/NotebookStand.png?alt=media&token=0321208f-5d4b-40d8-93a4-b0c249c5bd22" alt="">
+                </div>
+             </div>
+        </div>
+
+    </div>
+</div>
