@@ -9,6 +9,7 @@ using Assignment.Infrastructure;
 using Assignment.Core;
 using Microsoft.AspNetCore.Mvc;
 using Assignment.Core.Security;
+using System.Text;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Assignment
@@ -34,7 +35,9 @@ namespace Assignment
                 options.SuppressModelStateInvalidFilter = true;
             });
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>{
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
