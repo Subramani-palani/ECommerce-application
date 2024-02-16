@@ -54,6 +54,7 @@ namespace Assignment.Infrastructure
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IJwtService,JwtService>();
+            services.AddScoped<ICategoryRepository,CategoryRepository>();
             
             return services.AddDatabaseContext(configuration).AddUnitOfWork();
         }

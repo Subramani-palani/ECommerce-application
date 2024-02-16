@@ -2,6 +2,7 @@
 using Assignment.Contracts.Data.Entities;
 using Assignment.Contracts.DTO;
 using Assignment.Contracts.Data.Entities.Identity;
+using Assignment.Core.Features.Categories.CreateCategoryCommand;
 
 namespace Assignment.Core.Mapper
 {
@@ -11,6 +12,7 @@ namespace Assignment.Core.Mapper
         {
             CreateMap<RegisterUserDTO,ApplicationUser>();
             CreateMap<ApplicationUser,UserResponseDTO>();
+            CreateMap<Category,CreateCategoryCommand>().ReverseMap();
         }
     }
 }
