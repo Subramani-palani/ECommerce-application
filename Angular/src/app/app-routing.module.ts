@@ -5,6 +5,9 @@ import { AccountComponent } from './Account/account.component';
 import { AccountModule } from './Account/account.module';
 import { HomeComponent } from './application/home/home.component';
 import { ContactComponent } from './Account/contact/contact.component';
+import { UserprofileComponent } from './UserProfile/userprofile.component';
+import { MyProfileComponent } from './UserProfile/my-profile/my-profile.component';
+import { EditProfileComponent } from './UserProfile/edit-profile/edit-profile.component';
 
 
 const routes: Routes = [
@@ -23,6 +26,20 @@ const routes: Routes = [
       {
         path:'contact',
         component:ContactComponent
+      }
+    ]
+  },
+  {
+    path: 'profile',
+    component: UserprofileComponent,
+    children: [
+      {
+        path: 'myprofile',
+        component: MyProfileComponent,
+      },
+      {
+        path: 'edit',
+        component: EditProfileComponent
       }
     ]
   }

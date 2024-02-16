@@ -1,75 +1,95 @@
 <!-- src/app/navbar/navbar.component.html -->
 <nav class="bg-white py-4 w-screen">
-    <div class="w-screen flex flex-row justify-around items-center border border-solid border-b-2 border-x-0 border-t-0 border-gray-300  md:pb-6 pb-1">
-      <div class="text-black font-bold">
-        My Angular App
-      </div>
-      <div class="md:hidden">
-        <!-- Mobile menu button -->
-        <button (click)="toggleMobileMenus()" class="text-gray-400 focus:outline-none">
-          <svg
-            class="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <div class="hidden md:flex space-x-4">
-            <!-- Desktop navigation links -->
-            <a href="#" class="block text-black py-2 transition duration-300 ease-in-out hover:underline">Home</a>
-            <a routerLink="Account/contact" routerLinkActive="ActiveLink" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline ">Contact</a>
-            <a href="#" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">About</a>
-            <a routerLink="/Account/signup" routerLinkActive="ActiveLink"  class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">SignUp</a>
-      </div>
-      <div class="hidden md:flex ">
-            
-            <form>   
-               <div class="flex flex-row justify-start items-center relative">
-                    
-                    
-                    <button type="submit" class="text-white absolute  left-44 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-300 dark:hover:bg-white-700 dark:focus:ring-white-800">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
-                    </button>
-                    <input type="search" id="default-search" class="block  w-60 p-2  pe-16 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
-                </div>
-            </form>
-
-      </div>
-      
+  <div class="w-screen flex flex-row justify-around items-center border border-solid border-b-2 border-x-0 border-t-0 border-gray-300 md:pb-6 pb-1">
+    <div class="text-black font-bold">
+      My Angular App
     </div>
-    <!-- MobileNavigationBar -->
-    <div *ngIf="isMobileMenuOpen" class="md:hidden flex flex-col items-center">
-        <!-- Mobile navigation links -->
-        <a href="#" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">Home</a>
-        <a routerLink="Account/contact" routerLinkActive="ActiveLink" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">Contact</a>
-        <a href="#" class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">About</a>
-        <a routerLink="/Account/signup" routerLinkActive="ActiveLink"  class="block text-black py-2 transition-all duration-300 ease-in-out hover:underline">SignUp</a>
+    <div class="md:hidden">
+      <!-- Mobile menu button -->
+      <button (click)="toggleMobileMenus()" class="text-gray-400 focus:outline-none">
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
     </div>
-    
-  </nav>
-  <div class=" md:hidden block py-2 ">
-    <form class="flex flex-row justify-center " >   
-        <div class="flex flex-row items-center relative ">
-            <button type="submit" class="text-white absolute  left-52 hover:border-solid hover:border-2 hover:border-gray-500  focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-1 py-1 dark:bg-gray-300 dark:hover:bg-white-700 dark:focus:ring-white-800">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-            </button>
-            <input type="search" id="default-search" class="block  max-w-full mx-3 p-2 pe-16 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+    <div class="hidden md:flex space-x-4">
+      <!-- Desktop navigation links -->
+      <a href="#" class="block text-black py-2">Home</a>
+      <a href="#" class="block text-black py-2">Contact</a>
+      <a href="#" class="block text-black py-2">About</a>
+      <!-- if user log in sign up won't show -->
+      <a *ngIf="!isLoggedIn" routerLink="/Account/signup" routerLinkActive="router-link-active" class="block text-black py-2">SignUp</a>
+    </div>
+    <div class="hidden md:flex ">
+      <form>
+        <div class="flex flex-row justify-start items-center relative">
+          <button type="submit" class="text-white absolute  left-44 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-300 dark:hover:bg-white-700 dark:focus:ring-white-800">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+          </button>
+          <input type="search" id="default-search" class="block  w-60 p-2  pe-16 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
         </div>
-    </form>
-
+      </form>
+    </div>
+    <!-- if user log in cart and user logo visible-->
+    <div *ngIf="isLoggedIn">
+      <!-- Cart logo -->
+      <div class="hidden md:flex space-x-8">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     
+      <!-- User logo -->
+      
+      <!-- <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="16" fill="#DB4444"/>
+        <path d="M21 23V21.3333C21 20.4493 20.691 19.6014 20.1408 18.9763C19.5907 18.3512 18.8446 18 18.0667 18H12.9333C12.1554 18 11.4093 18.3512 10.8592 18.9763C10.309 19.6014 10 20.4493 10 21.3333V23" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 15C17.6569 15 19 13.6569 19 12C19 10.3431 17.6569 9 16 9C14.3431 9 13 10.3431 13 12C13 13.6569 14.3431 15 16 15Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg> -->
+      <a routerLink="/profile/myprofile">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="16" fill="#DB4444"/>
+          <path d="M21 23V21.3333C21 20.4493 20.691 19.6014 20.1408 18.9763C19.5907 18.3512 18.8446 18 18.0667 18H12.9333C12.1554 18 11.4093 18.3512 10.8592 18.9763C10.309 19.6014 10 20.4493 10 21.3333V23" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 15C17.6569 15 19 13.6569 19 12C19 10.3431 17.6569 9 16 9C14.3431 9 13 10.3431 13 12C13 13.6569 14.3431 15 16 15Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      </div>
+    </div>
+  </div>
+  <!-- MobileNavigationBar -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden flex flex-col items-center">
+    <!-- Mobile navigation links -->
+    <a href="#" class="block text-black py-2">Home</a>
+    <a href="#" class="block text-black py-2">Contact</a>
+    <a href="#" class="block text-black py-2">About</a>
+    <a routerLink="/Account/signup" routerLinkActive="router-link-active" class="block text-black py-2">SignUp</a>
+    <a *ngIf="!isLoggedIn" routerLink="/Account/signup" routerLinkActive="router-link-active" class="block text-black py-2">SignUp</a>
+  </div>
+</nav>
+<div class="md:hidden block py-2 ">
+  <form class="flex flex-row justify-center " >
+    <div class="flex flex-row items-center relative ">
+      <button type="submit" class="text-white absolute  left-52 hover:border-solid hover:border-2 hover:border-gray-500  focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-1 py-1 dark:bg-gray-300 dark:hover:bg-white-700 dark:focus:ring-white-800">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+      </button>
+      <input type="search" id="default-search" class="block  max-w-full mx-3 p-2 pe-16 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+    </div>
+  </form>
 </div>
-
-  

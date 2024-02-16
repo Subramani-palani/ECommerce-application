@@ -1,0 +1,34 @@
+<div class="flex h-screen">
+  <div class="w-64 h-full bg-gray-200 text-black p-8 ">
+    <h2 class="text-2xl font-semibold mb-6">My Account</h2>
+    <ul class="list-unstyled text-sm">
+      <li class="mb-2"> 
+        <a href="/profile/edit">Edit Profile</a>
+      </li> 
+      <li class="mb-2"> <a class="block py-1 hover:text-gray-300" href="#">Address Book</a> </li>
+      <li class="mb-2"> <a class="block py-1 hover:text-gray-300" href="#">My Orders</a> </li>
+    </ul>
+  </div>
+  <div class="flex-1 p-8">
+    <div class="container max-w-500 mx-auto px-20 py-19">
+      <h2 class="text-red-500">Your Profile</h2>
+      <form [formGroup]="profileForm" (ngSubmit)="save()" class="space-y-6">
+        <div class="form-group">
+           <label for="PersonName" class="font-bold block ">PersonName:</label> 
+           <input type="text" id="Name" formControlName="PersonName" placeholder="Enter Name"
+            class="w-3/4 px-4 py-2 bg-gray-300 rounded-md"> 
+          </div>
+        <div class="form-group"> 
+          <label for="Email" class="font-bold block">Email:</label>
+           <input type="Email" id="email" formControlName="Email" placeholder="Enter Email" class="w-3/4 px-4 py-2 border bg-gray-300 rounded-md">
+        </div>
+        <div class="form-group">
+           <label for="PhoneNumber" class="font-bold block">PhoneNumber:</label> 
+           <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" placeholder="Enter Phone Number"
+            class="w-3/4 px-4 py-2 border bg-gray-300 rounded-md"> 
+          </div> 
+          <button type="button" (click)="navigateToEditProfile()" class="px-4 py-2 bg-blue-500 text-white rounded-md">Edit Details</button> 
+        </form>
+    </div>
+  </div>
+</div>
