@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Assignment.Contracts.Data.Entities.Identity;
 using Assignment.Contracts.DTO;
 using Assignment.Core.Features.User.Requests;
 using MediatR;
@@ -22,7 +23,7 @@ namespace Assignment.API.Controllers
 
 
         [HttpGet]
-        public async Task<IEnumerable<UserResponseDTO>> GetAllUsersAsync(){
+        public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync(){
             GetAllUsersQuery getAllUsersQuery = new ();
             return await _mediator.Send(getAllUsersQuery);
         }

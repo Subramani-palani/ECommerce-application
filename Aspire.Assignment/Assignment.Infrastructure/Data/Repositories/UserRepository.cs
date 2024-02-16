@@ -89,7 +89,7 @@ namespace Assignment.Core.Data.Repositories
 
         public async Task<IEnumerable<ApplicationUser>> GetAllUsersAsync()
         {
-            var users = await _userManager.Users.ToListAsync();
+            var users = await _userManager.Users.Include(address => address.Address).Include(cart => cart.Cart).ToListAsync();
             return users;
         }
     }
