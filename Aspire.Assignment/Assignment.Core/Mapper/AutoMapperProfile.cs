@@ -13,6 +13,7 @@ namespace Assignment.Core.Mapper
             CreateMap<RegisterUserDTO,ApplicationUser>();
             CreateMap<ApplicationUser,UserResponseDTO>();
             CreateMap<Category,CreateCategoryCommand>().ReverseMap();
+            CreateMap<Category,CategoriesDTO>();
         }
     }
 }

@@ -1,7 +1,11 @@
 
 using Assignment.Contracts.Data.Entities;
 using Assignment.Contracts.Data.Repositories;
+using Assignment.Core.Exceptions;
 using Assignment.Migrations;
+using MediatR;
+using Microsoft.AspNetCore.Server.IIS.Core;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Assignment.Core.Data.Repositories
@@ -19,23 +23,40 @@ namespace Assignment.Core.Data.Repositories
             await _databaseContext.Categories.AddAsync(category);
             await _databaseContext.SaveChangesAsync();
 
-            Category newCategory =  _databaseContext.Categories.FirstOrDefault(c => c.CategoryName == category.CategoryName);
+            Category? newCategory =  await _databaseContext.Categories.FirstOrDefaultAsync(c => c.CategoryName == category.CategoryName);
 
-            if(newCategory is null){
+            if(newCategory == null){
                 return Guid.Empty;
             }
 
             return newCategory.Id;
         }
 
-        public Task DeleteCategoryAsync(Guid categoryId)
+        public async Task DeleteCategoryAsync(Guid categoryId)
         {
-            throw new NotImplementedException();
+            Category? categoryToBeDeleted = await _databaseContext.Categories.FirstOrDefaultAsync(category => category.Id == categoryId) ?? throw new InvalidRequestBodyException();
+            // if(categoryToBeDeleted == null){
+            //     //Category Not Found
+            //     throw new InvalidRequestBodyException();
+            // }
+
+            _databaseContext.Categories.Remove(categoryToBeDeleted);
+            await _databaseContext.SaveChangesAsync();
         }
 
-        public Task<List<Category>> GetAllCategoriesAsync()
+        public async Task<List<Category>> GetAllCategoriesAsync()
         {
-            throw new NotImplementedException();
+            return await _databaseContext.Categories.ToListAsync();
+        }
+
+        public async Task<List<Product>> GetAllProductsByCategoryIdAsync(Guid categoryId)
+        {
+            List<Category> categories = await _databaseContext.Categories.Include(category => category.Products).ToListAsync();
+            
+            List<Product> allProducts =  categories.FirstOrDefault(category => category.Id == categoryId).Products;
+
+            return allProducts;
+
         }
     }
 }

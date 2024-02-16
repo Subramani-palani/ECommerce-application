@@ -8,5 +8,6 @@ namespace Assignment.Contracts.Data.Repositories
         public Task<Guid> AddCategoryAsync(Category category);
         public Task DeleteCategoryAsync(Guid categoryId);
         public Task<List<Category>> GetAllCategoriesAsync();
+        public Task<List<Product>> GetAllProductsByCategoryIdAsync(Guid categoryId);
     }
 }
