@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Assignment.Core.Features.User.Handlers;
 
-public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, IEnumerable<UserResponseDTO>>
+public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, IEnumerable<ApplicationUser>>
 {
     private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
@@ -17,18 +17,18 @@ public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, IEnumer
         _userRepository = userRepository;
         _mapper = mapper;
     }
-    public async Task<IEnumerable<UserResponseDTO>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<ApplicationUser>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
     {
         //Fetch the users from userRepository
         IEnumerable<ApplicationUser> applicationUsers = await _userRepository.GetAllUsersAsync();
-        List<UserResponseDTO> users = new ();
+        // List<UserResponseDTO> users = new ();
 
-        //Mapping the objects from ApplicationUser to UserResponseDTO
-        foreach(var applicationUser in applicationUsers){
-            users.Add(_mapper.Map<UserResponseDTO>(applicationUser));
-        }
+        // //Mapping the objects from ApplicationUser to UserResponseDTO
+        // foreach(var applicationUser in applicationUsers){
+        //     users.Add(_mapper.Map<UserResponseDTO>(applicationUser));
+        // }
 
-        return users;
+        return applicationUsers;
         
     }
 }
