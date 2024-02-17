@@ -56,6 +56,7 @@ namespace Assignment.Infrastructure
             services.AddScoped<IJwtService,JwtService>();
             services.AddScoped<ICategoryRepository,CategoryRepository>();
             services.AddScoped<IProductRepository,ProductRepository>();
+            services.AddScoped<ICartRepository,CartRepository>();
             
             return services.AddDatabaseContext(configuration).AddUnitOfWork();
         }

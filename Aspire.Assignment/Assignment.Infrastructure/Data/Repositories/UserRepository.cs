@@ -16,15 +16,17 @@ namespace Assignment.Core.Data.Repositories
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IJwtService _jwtService;
+        private readonly ICartRepository _cartRepository;
 
         public UserRepository(DatabaseContext databaseContext, UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager,
-                                IJwtService jwtService, RoleManager<ApplicationRole> roleManager)
+                                IJwtService jwtService, RoleManager<ApplicationRole> roleManager,ICartRepository cartRepository)
         {
             _databaseContext = databaseContext;
             _userManager = userManager;
             _signInManager = signInManager;
             _jwtService = jwtService;
             _roleManager = roleManager;
+            _cartRepository = cartRepository;
         }
 
         public async Task<Guid> RegisterUserAsync(ApplicationUser applicationUser, string password)
@@ -55,6 +57,10 @@ namespace Assignment.Core.Data.Repositories
             
             //step3: 
             ApplicationUser newUser = await _userManager.FindByEmailAsync(applicationUser.Email);
+
+            //ToDo : Create a cart for every user.
+            _cartRepository.CreatCartForUser(newUser.Id);
+
             return newUser.Id;
         }
 
