@@ -1,38 +1,27 @@
-import { NgModule } from '@angular/core';
+import { ApplicationModule, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { UserProfileModule } from './UserProfile/UserProfile.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountModule } from './Account/account.module';
 import { SharedModule } from './shared/shared.module';
-import { CommonModule } from '@angular/common';
-import { ApplicationModule } from './application/application.module';
-
-
-
-
-
-const firebaseConfig = {
-  // Your Firebase config object
-};
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-  
-    
-  ],
+
+   ],
   imports: [
-    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ApplicationModule,
+    HttpClientModule,
     SharedModule,
-    AccountModule
-   
-    
+    AccountModule,
+    UserProfileModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

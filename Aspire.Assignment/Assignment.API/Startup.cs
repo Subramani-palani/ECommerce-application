@@ -65,7 +65,7 @@ namespace Assignment
 
             app.UseHttpsRedirection();
           
-         
+            app.UseCors();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -76,6 +76,7 @@ namespace Assignment
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Aspire Assignment App API v1");
             });
 
+            
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
