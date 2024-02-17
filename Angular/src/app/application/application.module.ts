@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { AccountModule} from '../Account/account.module';
 
-import { ApplicationRoutingModule } from './application-routing.module';
-import { HomeComponent } from './home/home.component';
+
+
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+
+  ],
+  exports:[
+    AccountModule
   ],
   imports: [
     CommonModule,
-    ApplicationRoutingModule
-  ],
-  exports:[
-    HomeComponent
+    AccountModule,
+    FormsModule
   ]
 })
 export class ApplicationModule { }

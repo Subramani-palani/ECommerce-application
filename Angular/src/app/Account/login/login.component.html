@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce App</title>
+</head>
+<body>
+    <div class="md:flex md:flex-row md:my-9">
+
+        <div class=" hidden md:flex md:w-1/2  ">
+          <img src="../../../../assets/SignUp-img.png" alt="Please wait"  />
+        </div>
+        <div class="mx-auto pt-6 px-7">
+            <div class="space-y-4 mb-2">
+                <div class="text-3xl text-black font-semibold">
+                    Log in to Exclusive
+                </div>
+                <div class="text-md font-medium">
+                    Enter your details below
+                </div>
+            </div>
+            <div class="md:flex md:flex-col">
+                <form [formGroup]="loginForm" class="md:flex md:flex-col space-y-2">
+                    <div class="space-y-4">
+                        <div class="md:flex md:flex-col gap-2 md:items-start">
+                            <input type="text" id="email" formControlName="email" placeholder="email" class="h-10 w-full  border border-x-0 border-t-0  border-gray-400  p-2 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out hover:border-gray-400 ">
+                            <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="text-red-500">
+                                Username is required.
+                            </div>
+                        </div>
+                        <!-- <div class="flex flex-col gap-2 items-start">
+                            <input type="text" id="email" formControlName="email" placeholder="Email" class="h-10 w-full  border border-x-0 border-t-0  border-gray-400  p-2 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out hover:border-gray-400 ">
+                            <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="text-red-500">
+                                Email is required.
+                            </div>
+                        </div> -->
+                        <div class="flex flex-col gap-2 items-start">
+                            <input type="password" id="password" formControlName="password" placeholder="Password" class="h-10 w-full  border border-x-0 border-t-0  border-gray-400  p-2 focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out hover:border-gray-400 ">
+                            <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="text-red-500">
+                                Password is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="bg-red-500 text-white md:px-12 md:py-1 h-12 w-half rounded-md mt-4  backdrop-filter"type="submit" (click)="Getlogin()">Log&nbsp;in</button>
+                        &nbsp; <a href="" style="color: red;">Forgot password?</a>
+                    </div>
+                    <div class="flex flex-row space-x-2 py-5 justify-center">
+                      <div class="text-md text-gray-500">
+                          Don't have an account?
+                      </div>
+                      <div class="text-md text-gray-600 font-semibold border border-solid border-x-0 border-t-0 border-b-2 border-gray-400">
+                          <!-- <a routerLink="/Account/login" routerLinkActive="router-link-active" >Log&nbsp;in</a> -->
+                          <a href="/Account/signup">Create one</a>
+                      </div>
+                  </div>
+                </form>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+</html>

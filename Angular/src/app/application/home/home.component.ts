@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {
   Carousel,
   initTE,
 } from "tw-elements";
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
