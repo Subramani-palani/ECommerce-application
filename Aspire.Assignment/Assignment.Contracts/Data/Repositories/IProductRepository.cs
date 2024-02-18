@@ -9,5 +9,6 @@ namespace Assignment.Contracts.Data.Repositories
         public Task<Product?> UpdateProductAsync(Product product);
         public Task<List<Product>> GetAllProductsAsync();
         public Task<List<CartProduct>> GetAllCartsListAsync();
+        public Task<bool> IsProductExistsAsync(Guid productId);
     }
 }

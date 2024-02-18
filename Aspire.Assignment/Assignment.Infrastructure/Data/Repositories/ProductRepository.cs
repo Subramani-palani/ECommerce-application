@@ -47,6 +47,12 @@ namespace Assignment.Infrastructure.Data.Repositories
             return await _databaseContext.Products.ToListAsync();
         }
 
+        public async Task<bool> IsProductExistsAsync(Guid productId)
+        {
+            Product? existingProduct = await _databaseContext.Products.FindAsync(productId);
+            return existingProduct != null;
+        }
+
         public async Task<Product?> UpdateProductAsync(Product product)
         {
             //fetch product by Id

@@ -98,5 +98,12 @@ namespace Assignment.Core.Data.Repositories
             var users = await _userManager.Users.Include(address => address.Address).Include(cart => cart.Cart).ToListAsync();
             return users;
         }
+
+        public async Task<bool> IsUserExistsAsync(Guid userId)
+        {
+            ApplicationUser? existingUser = await _userManager.Users.FirstOrDefaultAsync(user => user.Id == userId);
+
+            return existingUser != null;
+        }
     }
 }

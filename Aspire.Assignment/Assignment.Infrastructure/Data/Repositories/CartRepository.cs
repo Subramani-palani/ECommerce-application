@@ -1,4 +1,5 @@
 using System.Net.Sockets;
+using System.Reflection.Metadata.Ecma335;
 using Assignment.Contracts.Data.Entities;
 using Assignment.Contracts.Data.Entities.Identity;
 using Assignment.Contracts.Data.Repositories;
@@ -39,25 +40,37 @@ namespace Assignment.Infrastructure.Data.Repositories
 
             ApplicationUser? user = await _userManager.Users.Include(cart => cart.Cart).FirstOrDefaultAsync(user => user.Id == userId);
 
+            Console.WriteLine(user.UserName);
+
             if(user == null){
                 return "User Not Found";
             }
-
-            // Guid cartId = (user.Cart == null) ? Guid.Empty : user.Cart.Id;
-
-            // if(cartId == Guid.Empty){
-            //     //This never gonna happen because for every user cart will be created at the time of account creation.
-            //     return "Cart Not Found";
-            // }
-
-            // Cart? userUart = _databaseContext.Carts.Find(cartId);
 
             if(user.Cart == null){
                 return "Cart not found!!";
             }
 
-            Cart? userCart = _databaseContext.Carts.Find(user.Cart.Id);
+            Cart? userCart = _databaseContext.Carts.Find(user.Cart.Id); 
 
+            Console.WriteLine("********* "+userCart.Id+" ***********");
+
+            CartProduct cartProduct = new(){
+                CartId = userCart.Id,
+                ProductId = productId
+            };
+
+            // Add the CartProduct to the cart
+            userCart.CartProducts.Add(cartProduct);
+
+            // Attach the userCart to the context
+            _databaseContext.Update(userCart);
+
+            Console.WriteLine("******************" +_databaseContext.Entry(userCart).State + " *****************");
+
+            // Save changes to the database
+            await _databaseContext.SaveChangesAsync();
+
+            return "Product added successfully";
             
         }
     }
