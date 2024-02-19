@@ -16,7 +16,8 @@ namespace Assignment.Contracts.Data.Repositories
 
         public void CreatCartForUser(Guid userId);
         public Task<string> AddProductToCartAsync(Guid userId,Guid productId);
-
+        public Task<string> DeleteProductFromCartAsync(Guid userId,Guid productId);
+        public Task<List<Product>> GetAllCartItemsAsync(Guid userId);
     
     }
 }
