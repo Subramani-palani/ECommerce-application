@@ -10,5 +10,6 @@ namespace Assignment.Contracts.Data.Repositories
         public Task<AuthenticationResponse?> AuthenticateUser(string email,string password);
         public Task LogoutAsync();
         public Task<IEnumerable<ApplicationUser>> GetAllUsersAsync();
+        public Task<bool> IsUserExistsAsync(Guid userId);
     }
 }
