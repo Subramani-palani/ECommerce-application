@@ -58,5 +58,12 @@ namespace Assignment.Core.Data.Repositories
             return allProducts;
 
         }
+
+        public bool IsCategoryExistsAsync(Guid CategoryId)
+        {
+            Category? category = _databaseContext.Categories.Find(CategoryId);
+
+            return category != null;
+        }
     }
 }

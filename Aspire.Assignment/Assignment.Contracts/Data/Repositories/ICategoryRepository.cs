@@ -9,5 +9,6 @@ namespace Assignment.Contracts.Data.Repositories
         public Task DeleteCategoryAsync(Guid categoryId);
         public Task<List<Category>> GetAllCategoriesAsync();
         public Task<List<Product>> GetAllProductsByCategoryIdAsync(Guid categoryId);
+        public bool IsCategoryExistsAsync(Guid CategoryId);
     }
 }

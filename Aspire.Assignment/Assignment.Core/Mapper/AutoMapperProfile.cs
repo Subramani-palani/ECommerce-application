@@ -3,6 +3,8 @@ using Assignment.Contracts.Data.Entities;
 using Assignment.Contracts.DTO;
 using Assignment.Contracts.Data.Entities.Identity;
 using Assignment.Core.Features.Categories.CreateCategoryCommand;
+using Assignment.Core.Features.Products.CreateProductCommand;
+using Assignment.Core.Features.Products.UpdateProductCommand;
 
 namespace Assignment.Core.Mapper
 {
@@ -14,6 +16,9 @@ namespace Assignment.Core.Mapper
             CreateMap<ApplicationUser,UserResponseDTO>();
             CreateMap<Category,CreateCategoryCommand>().ReverseMap();
             CreateMap<Category,CategoriesDTO>();
+            CreateMap<Product,GetProductsDTO>().ReverseMap();
+            CreateMap<Product,CreateProductCommand>().ReverseMap();
+            CreateMap<Product,UpdateProductCommand>().ReverseMap();
         }
     }
 }
